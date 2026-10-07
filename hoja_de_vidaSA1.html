@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sebastián Aleman — Hoja de vida</title>
+<style>
+  :root{
+    --ink:        #20241f;
+    --paper:      #fbfaf6;
+    --panel:      #17231c;
+    --panel-text: #f4f2ea;
+    --accent:     #6b7f4f;
+    --accent-dk:  #4b5c37;
+    --rule:       #d8d5c8;
+    --muted:      #5b6058;
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --sans:  'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    background:#e9e7df;
+    font-family:var(--sans);
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+    padding:40px 16px;
+  }
+
+  .page{
+    width:100%;
+    max-width:760px;
+    background:var(--paper);
+    box-shadow:0 1px 3px rgba(0,0,0,.08), 0 10px 30px rgba(0,0,0,.08);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--panel);
+    color:var(--panel-text);
+    padding:48px 52px 36px;
+  }
+
+  header .name{
+    font-family:var(--serif);
+    font-size:2.6rem;
+    font-weight:600;
+    letter-spacing:.2px;
+    margin:0 0 6px;
+  }
+
+  header .role{
+    font-family:var(--serif);
+    font-style:italic;
+    color:#c9d6b9;
+    font-size:1.15rem;
+    margin:0 0 26px;
+  }
+
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px 34px;
+    border-top:1px solid rgba(244,242,234,.18);
+    padding-top:20px;
+  }
+
+  .contact-item{
+    font-size:.85rem;
+    line-height:1.4;
+  }
+
+  .contact-item .label{
+    display:block;
+    color:#a7b596;
+    font-size:.7rem;
+    margin-bottom:2px;
+  }
+
+  .contact-item a{ color:var(--panel-text); text-decoration:none; }
+  .contact-item a:hover{ text-decoration:underline; }
+
+  /* ---------- Body ---------- */
+  main{ padding:40px 52px 52px; }
+
+  section{ margin-bottom:34px; }
+  section:last-child{ margin-bottom:0; }
+
+  .section-title{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin:0 0 16px;
+  }
+
+  .section-title .sq{
+    width:8px; height:8px;
+    background:var(--accent);
+    flex:none;
+    transform:translateY(-2px);
+  }
+
+  .section-title h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--accent-dk);
+    margin:0;
+  }
+
+  .section-rule{
+    border:none;
+    border-top:1px solid var(--rule);
+    margin:16px 0 0;
+  }
+
+  .perfil p{
+    font-size:.98rem;
+    line-height:1.65;
+    margin:0;
+    max-width:60ch;
+  }
+
+  /* Entries: experiencia / educación */
+  .entry{
+    display:grid;
+    grid-template-columns:1fr auto;
+    column-gap:16px;
+    padding:14px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .entry:first-of-type{ padding-top:0; }
+  .entry:last-of-type{ border-bottom:none; padding-bottom:0; }
+
+  .entry .role{
+    font-weight:600;
+    font-size:.98rem;
+    color:var(--ink);
+  }
+
+  .entry .org{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--muted);
+    font-size:.92rem;
+    margin-top:1px;
+  }
+
+  .entry .desc{
+    grid-column:1 / -1;
+    font-size:.9rem;
+    line-height:1.55;
+    color:#3a3e37;
+    margin-top:8px;
+  }
+
+  .entry .dates{
+    font-size:.78rem;
+    color:var(--muted);
+    white-space:nowrap;
+    align-self:start;
+    padding-top:2px;
+  }
+
+  /* Skills */
+  .skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .skill{
+    font-size:.85rem;
+    border:1px solid var(--accent);
+    color:var(--accent-dk);
+    padding:6px 14px;
+    line-height:1;
+  }
+
+  footer.note{
+    padding:16px 52px 30px;
+    font-size:.72rem;
+    color:#9a9a8f;
+    border-top:1px solid var(--rule);
+  }
+
+  @media (max-width:600px){
+    header, main{ padding-left:26px; padding-right:26px; }
+    header{ padding-top:36px; }
+    .entry{ grid-template-columns:1fr; row-gap:2px; }
+    .entry .dates{ order:3; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <p class="name">Sebastián Aleman</p>
+    <p class="role">Desarrollador Junior</p>
+
+    <div class="contact-row">
+      <div class="contact-item">
+        <span class="label">Teléfono</span>
+        +57 321 456 7123
+      </div>
+      <div class="contact-item">
+        <span class="label">Correo</span>
+        <a href="mailto:juanse.aleman@ecci.edu.co">juanse.aleman@ecci.edu.co</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">Ubicación</span>
+        Bogotá, Colombia
+      </div>
+      <div class="contact-item">
+        <span class="label">LinkedIn</span>
+        <a href="https://linkedin.com/in/usuario" target="_blank">linkedin.com/in/usuario</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="perfil">
+      <div class="section-title"><span class="sq"></span><h2>Perfil</h2></div>
+      <p>
+        Estudiante técnico en desarrollo informático con bases en programación
+        y ganas de crecer en un equipo de trabajo. Aprendo rápido, sigo
+        instrucciones con atención al detalle y busco mi primera oportunidad
+        para aplicar lo aprendido en un entorno profesional.
+      </p>
+      <hr class="section-rule">
+    </section>
+
+    <section>
+      <div class="section-title"><span class="sq"></span><h2>Experiencia</h2></div>
+
+      <div class="entry">
+        <div>
+          <div class="role">Aún sin experiencia laboral formal</div>
+          <div class="org">— —</div>
+        </div>
+        <div class="dates">0000 — Presente</div>
+      
+       
+      </div>
+      <hr class="section-rule">
+    </section>
+
+    <section>
+      <div class="section-title"><span class="sq"></span><h2>Educación</h2></div>
+
+     
+
+      <div class="entry">
+        <div>
+          <div class="role">Técnico en Desarrollo Informático</div>
+          <div class="org">Universidad ECCI</div>
+        </div>
+        <div class="dates">2025 — 2027</div>
+      </div>
+
+      <div class="entry">
+        <div>
+          <div class="role">Ingeniería en Sistemas</div>
+          <div class="org">Universidad ECCI</div>
+        </div>
+        <div class="dates">2027 — 2029</div>
+      </div>
+      <hr class="section-rule">
+    </section>
+
+    <section>
+      <div class="section-title"><span class="sq"></span><h2>Habilidades</h2></div>
+      <div class="skills">
+        <span class="skill">Python (básico)</span>
+        <span class="skill">HTML (básico)</span>
+        <span class="skill">Java (básico)</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="note">
+  </footer>
+
+</div>
+
+</body>
+</html>
